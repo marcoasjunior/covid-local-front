@@ -1,4 +1,6 @@
-.btn-group {
-    width: 100%;
-    max-width: 1120px;
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

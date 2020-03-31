@@ -4,21 +4,20 @@ import Login from '../src/Views/Login'
 import Navbar from '../src/Views/Navbar'
 import Profile from '../src/Views/Profile'
 import Symptoms from '../src/Views/Symptoms'
+import Register from '../src/Views/Register'
+import Mapa from './Views/Mapa'
 
 export default function Routes() {
     return (
         <BrowserRouter>
-        <Switch>
             <Route path='/'exact component={Login} />
-            <Route path='/app' component={Login}>
-                <Route path='/map' component={Login} />
-                <Route path='/profile' component={Login} />
-                <Route path='/Symptoms' component={Login} />
-            </Route>
-            <Route path='/Navbar' component={Navbar} />
-            <Route path='/Profile' component={Profile} />
-            <Route path='/Symptoms' component={Symptoms} />
-        </Switch>
+            <Route path='/register'exact component={Register} />
+            <Route path='/app' component={Navbar} />
+                <Switch>                    
+                    <Route path='/app/Mapa' component={Mapa} />
+                    <Route path='/app/Profile' component={Profile} />
+                    <Route path='/app/Symptoms' component={Symptoms} />
+                </Switch>
         </BrowserRouter>
     )
 }

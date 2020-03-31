@@ -1,8 +1,20 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
+import {Link, useHistory} from 'react-router-dom'
+import {Repeat} from 'react-feather'
 import './styles.css'
 
 export default function Login() {
+    const history = useHistory()
+
+    function goRegister() {
+        history.push('/register')
+    }
+
+    function goApp() {
+        history.push('/mapa')
+    }
+
     return (
         <div className="card">         
             <img className="card-img-top" src={logo} alt='logo' />
@@ -22,12 +34,12 @@ export default function Login() {
 
                 </div>
              <div className='cardButtons'>
-                <button type="submit" className="btn btn-primary">Login</button>
-                <button type="button" className="btn btn-info">Registrar</button>
+                <button onClick={goApp} type="submit" className="btn btn-primary">Login</button>
+                <button onClick={goRegister} type="button" className="btn btn-info">Registrar</button>
             </div>
                 </form>
 
-            <a href="#" className="card-link"><small>Esqueci minha senha</small></a>
+            <Link to='/'> <Repeat size='10' /> <small>Esqueci minha senha</small></Link>
   
             </div>
 

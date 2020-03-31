@@ -10,14 +10,14 @@ export default function Profile() {
                 <div className="form-group">
 
                     <label for="exampleInputEmail1">Novo E-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <input type="email" class="form-control" />
             
                 </div>
 
                 <div className="form-group">
 
                     <label for="exampleInputPassword1">Nova Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" />
+                    <input type="password" class="form-control" />
 
                 </div>
              <div className='cardButtons'>
