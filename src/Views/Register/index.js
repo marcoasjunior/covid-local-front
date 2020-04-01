@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import api from '../../utils/axios'
-import './styles.css'
 import {
     useHistory
 } from 'react-router-dom'

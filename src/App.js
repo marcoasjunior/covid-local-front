@@ -1,5 +1,6 @@
 import React from 'react';
 import Routes from './router'
+import '../src/index.css'
 
 function App() {
   return (

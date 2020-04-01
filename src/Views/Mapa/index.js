@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../../utils/axios'
 import './styles.css'
 
 export default function Mapa() {
+    const [cases, setCases] = useState({})
+
+    useEffect(() => {
+        api.get(`/cases/${localStorage.id}`)
+            .then(response => {
+
+                setCases(response.data)
+                console.log(response.data.responseN)
+            })
+            .catch(function (error) {
+
+                alert(`Erro ao enviar dados`)
+            })
+    }, [])
+
     return (
         <div>
             <div className="card">
@@ -11,7 +27,7 @@ export default function Mapa() {
 
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Rua</h5>
+                    <h5 className="card-title">{}</h5>
                     <p className="card-text">Pessoas com sintomas:</p>
 
                 </div>
@@ -31,11 +47,7 @@ export default function Mapa() {
                     <p className="card-text">Pessoas com sintomas:</p>
 
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">País</h5>
-                    <p className="card-text">Pessoas com sintomas:</p>
 
-                </div>
                 </div>
 
         </div>

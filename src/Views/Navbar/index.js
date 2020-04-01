@@ -19,7 +19,7 @@ export default function Navbar() {
     
     return (
         <div className='container'>
-        <div class="row justify-content-center">
+        <div className="row justify-content-center">
         <div className="btn-group" role="group">
             
             <button onClick={goMapa} type="button" className="btn btn-secondary"><Map /> Mapa</button>
