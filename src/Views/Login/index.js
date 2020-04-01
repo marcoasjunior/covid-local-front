@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/facebook_cover_photo_1.png'
 import {Link, useHistory} from 'react-router-dom'
 import {Repeat} from 'react-feather'
 import './styles.css'
@@ -12,7 +12,7 @@ export default function Login() {
     }
 
     function goApp() {
-        history.push('/mapa')
+        history.push('/app/mapa')
     }
 
     return (
