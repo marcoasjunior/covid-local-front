@@ -110,7 +110,7 @@ export default function Symptoms() {
                                                 <input type="checkbox" className="custom-control-input" id="customCheck2" 
                                                 value={fever} 
                                                 onChange={(e) => e.target.checked ? setFever('Febre'): setFever(e.target.checked)}/>
-                                                <label className="custom-control-label" htmlFor="customCheck2">Febre</label>
+                                                <label className="custom-control-label" htmlFor="customCheck2">Febre Alta</label>
                                         </div>
                                         <div className="custom-control custom-checkbox">
                                                 <input type="checkbox" className="custom-control-input" id="customCheck3" 

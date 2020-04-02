@@ -1,40 +1,70 @@
-import React from 'react';
+import React, {
+    useState
+} from 'react';
 import logo from '../../assets/facebook_cover_photo_1.png'
-import {Link, useHistory} from 'react-router-dom'
-import {Repeat} from 'react-feather'
+import {
+    Link,
+    useHistory
+} from 'react-router-dom'
+import {
+    Repeat
+} from 'react-feather'
+import api from '../../utils/axios'
 import './styles.css'
 
 export default function Login() {
+
     const history = useHistory()
+    const [login, setLogin] = useState('')
+    const [password, setPassword] = useState('')
 
     function goRegister() {
         history.push('/register')
     }
 
-    function goApp() {
-        history.push('/app/mapa')
+    async function goApp(e) {
+
+        e.preventDefault();
+
+        let data = {
+
+            "login": login,
+            "password": password
+
+        }
+
+        await api.post('/login', data)
+            .then(function (response) {
+                localStorage.id = response.data
+                console.log(response)
+                history.push('/app/mapa')
+            })
+            .catch(function (error) {
+                alert(`Erro no login`)
+            });
+     
     }
 
     return (
         <div className="card">         
             <img className="card-img-top" src={logo} alt='logo' />
-            <div class="card-body">
-            <form>
+            <div className="card-body">
+            <form onSubmit={goApp} >
                 <div className="form-group">
 
-                    <label for="exampleInputEmail1">E-mail</label>
-                    <input type="email" class="form-control" />
+                    <label htmlFor="exampleInputEmail1">E-mail</label>
+                    <input type="email" className="form-control" value={login} onChange={(e) => setLogin(e.target.value)} />
             
                 </div>
 
                 <div className="form-group">
 
-                    <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control"/>
+                    <label htmlFor="exampleInputPassword1">Senha</label>
+                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
                 </div>
              <div className='cardButtons'>
-                <button onClick={goApp} type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">Login</button>
                 <button onClick={goRegister} type="button" className="btn btn-info">Registrar</button>
             </div>
                 </form>

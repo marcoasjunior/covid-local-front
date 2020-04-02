@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import api from '../../utils/axios'
 import axios from 'axios'
 import {
@@ -44,7 +44,7 @@ export default function Register() {
 
         e.preventDefault();
 
-        if(password.length < 6) alert("Senha com pelo menos 6 caracteres")
+        if(password.length < 6) return alert("Senha com pelo menos 6 caracteres")
 
         const data = {
 
@@ -59,10 +59,13 @@ export default function Register() {
 
         }
 
+        console.log(data)
+
         await api.post('/user', data)
             .then(function (response) {
+                localStorage.id = response.data
                 goMapa()
-                console.log(response);
+   
             })
             .catch(function (error) {
                 alert(`Erro no cadastro`)
@@ -71,9 +74,9 @@ export default function Register() {
 
     return (
         <div className="card">       
-        <div class="alert alert-primary" role="alert">
-        Preencha seus dados abaixo:
-        </div>
+            <div className="alert alert-primary" role="alert">
+            Preencha seus dados abaixo:
+            </div>
         
             <div className="card-body">
   
@@ -100,11 +103,11 @@ export default function Register() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="inputAddress">Logradouro</label>
-                    <input type="text" readOnly className="form-control" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Número não é necessário"/>
+                    <input type="text" readOnly className="form-control" value={address} onChange={(e) => setAddress(e.target.value)}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="inputAddress2">Complemento</label>
-                    <input type="text" className="form-control" value={address2} onChange={(e) => setAddress2(e.target.value)} placeholder="Apartmento, Bloco, Estudio"/>
+                    <input type="text" className="form-control" value={address2} onChange={(e) => setAddress2(e.target.value)} placeholder="Número, Apartamento, Bloco, Quadra"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="inputAddress2">Bairro</label>
