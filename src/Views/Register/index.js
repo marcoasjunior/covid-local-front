@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import api from '../../utils/axios'
+import axios from 'axios'
 import {
     useHistory
 } from 'react-router-dom'
+
 
 export default function Register() {
     const history = useHistory()
@@ -19,9 +21,30 @@ export default function Register() {
         history.push('/app/mapa')
     }
 
+    async function getAddress(){
+
+        axios.get(`http://viacep.com.br/ws/${cep}/json/`)
+            .then(response => {
+
+                setAddress(response.data.logradouro)
+                setAddress2(response.data.complemento)
+                setDistrict(response.data.bairro)
+                setCity(response.data.localidade)
+                setUf(response.data.uf)
+
+            })
+            .catch(function (error) {
+
+            })
+
+    }
+
+
     async function register(e) {
 
         e.preventDefault();
+
+        if(password.length < 6) alert("Senha com pelo menos 6 caracteres")
 
         const data = {
 
@@ -48,40 +71,53 @@ export default function Register() {
 
     return (
         <div className="card">       
+        <div class="alert alert-primary" role="alert">
+        Preencha seus dados abaixo:
+        </div>
         
             <div className="card-body">
-            <h5 class="card-title">Preencha seus dados abaixo:</h5>  
+  
             <form onSubmit={register}>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputEmail4">E-mail</label>
-                        <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        <label htmlFor="inputEmail4">E-mail</label>
+                        <input type="email" required className="form-control" value={email} onChange={(e) =>setEmail(e.target.value)}/>
                     </div>
                     <div className="form-group col-md-6">
-                        <label for="inputPassword4">Senha</label>
-                        <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        <label htmlFor="inputPassword4">Senha</label>
+                        <input type="password" required className="form-control" value={password} min={6} onChange={(e) => setPassword(e.target.value)} placeholder='Mín 6 caracteres'/>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label for="inputAddress">Rua</label>
-                    <input type="text" className="form-control" value={address} onChange={(e) => setAddress(e.target.value)}/>
+                <div className="form-row align-items-center">
+                    <div className="form-group col-auto">
+                            <label htmlFor="inputZip">CEP</label>
+                            <input type="number" required className="form-control mb-2" value={cep} onChange={(e) => setCep(e.target.value)} placeholder='Somente números'/>
+                        </div>
+                    <div className="col-auto col-auto">
+                    <button onClick={getAddress} type="button" className="btn btn-primary">Procurar Endereço</button>
+                        </div>
+                    
                 </div>
                 <div className="form-group">
-                    <label for="inputAddress2">Complemento</label>
-                    <input type="text" className="form-control" value={address2} onChange={(e) => setAddress2(e.target.value)} placeholder="Apartmento, Bloco..."/>
+                    <label htmlFor="inputAddress">Logradouro</label>
+                    <input type="text" readOnly className="form-control" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Número não é necessário"/>
                 </div>
                 <div className="form-group">
-                    <label for="inputAddress2">Bairro</label>
-                    <input type="text" className="form-control" value={district} onChange={(e) => setDistrict(e.target.value)}/>
+                    <label htmlFor="inputAddress2">Complemento</label>
+                    <input type="text" className="form-control" value={address2} onChange={(e) => setAddress2(e.target.value)} placeholder="Apartmento, Bloco, Estudio"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="inputAddress2">Bairro</label>
+                    <input type="text" readOnly className="form-control" value={district} onChange={(e) => setDistrict(e.target.value)}/>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputCity">Cidade</label>
-                        <input type="text" className="form-control" value={city} onChange={(e) => setCity(e.target.value)}/>
+                        <label htmlFor="inputCity">Cidade</label>
+                        <input type="text" readOnly className="form-control" value={city} onChange={(e) => setCity(e.target.value)}/>
                     </div>
                     <div className="form-group col-md-3">
-                        <label for="inputState">UF</label>               
-                        <select id="inputState" className="form-control" value={uf} onChange={(e) => setUf(e.target.value)}>
+                        <label htmlFor="inputState">UF</label>               
+                        <select id="inputState" readOnly className="form-control" value={uf} onChange={(e) => setUf(e.target.value)}>
                             <option value="">Selecione</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -111,10 +147,6 @@ export default function Register() {
                             <option value="SE">Sergipe</option>
                             <option value="TO">Tocantins</option>
                         </select>
-                    </div>
-                    <div className="form-group col-md-3">
-                        <label for="inputZip">CEP</label>
-                        <input type="text" className="form-control" value={cep} onChange={(e) => setCep(e.target.value)}/>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-primary">Registrar</button>

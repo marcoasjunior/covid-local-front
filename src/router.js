@@ -1,4 +1,5 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
 import React from 'react';
 import Login from '../src/Views/Login'
 import Navbar from '../src/Views/Navbar'
@@ -13,7 +14,7 @@ export default function Routes() {
             <Route path='/'exact component={Login} />
             <Route path='/register'exact component={Register} />
             <Route path='/app' component={Navbar} />
-                <Switch>                    
+            <Switch>                 
                     <Route path='/app/Mapa' component={Mapa} />
                     <Route path='/app/Profile' component={Profile} />
                     <Route path='/app/Symptoms' component={Symptoms} />

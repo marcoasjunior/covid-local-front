@@ -22,9 +22,9 @@ export default function Navbar() {
         <div className="row justify-content-center">
         <div className="btn-group" role="group">
             
-            <button onClick={goMapa} type="button" className="btn btn-secondary"><Map /> Mapa</button>
-            <button onClick={goSymptoms} type="button" className="btn btn-secondary"><AlertCircle /> Sintomas</button>
-            <button onClick={goProfile} type="button" className="btn btn-secondary"><User /> Perfil</button>
+            <button onClick={goMapa} type="button" className="btn btn-light "><Map /> Ocorrências</button>
+            <button onClick={goSymptoms} type="button" className="btn btn-light"><AlertCircle /> Sintomas</button>
+            <button onClick={goProfile} type="button" className="btn btn-light"><User /> Perfil</button>
             </div>
         </div>
         </div>

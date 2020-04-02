@@ -88,13 +88,10 @@ export default function Symptoms() {
 
         }
 
-
-
-
         return (
         <div>
             <div className='card'>
-                <div className='card-body'>
+                <div className=''>
                         
                         <ul className="list-group list-group-flush">
                          
