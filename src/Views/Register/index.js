@@ -23,7 +23,7 @@ export default function Register() {
 
     async function getAddress(){
 
-        axios.get(`http://viacep.com.br/ws/${cep}/json/`)
+        axios.get(`https://viacep.com.br/ws/${cep}/json/`)
             .then(response => {
 
                 setAddress(response.data.logradouro)
