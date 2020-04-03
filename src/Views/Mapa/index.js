@@ -67,7 +67,6 @@ export default function Mapa() {
                 <div className="card-body">
                     <h5 className="card-title">Cidade: {cases.city}</h5>
                     <p className="card-text">Pessoas com sintomas: {casesN.Ncity}</p>
-                    <p className="card-text">Número confirmado de casos: </p>
 
                 </div>
                 <div className="card-body">
