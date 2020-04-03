@@ -13,7 +13,102 @@
 		{
 			"src": "https://localvid.netlify.com/logo512.png",
 			"sizes": "512x512"
-		}],
+    },
+    {
+      "src": "https://localvid.netlify.com/350c9ef2-af40-a1c3-2925-56058a02e607.webPlatform.png",
+      "sizes": "44x44",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/21b8c534-a049-2403-d4a1-c4b3fb5e1557.webPlatform.png",
+      "sizes": "48x48",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/e16469a5-ff06-ad8a-c8c6-2f2ea1e4b568.webPlatform.png",
+      "sizes": "1240x600",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/811c53d6-c11f-d7db-bbb7-9910a1121b4a.webPlatform.png",
+      "sizes": "300x300",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/a702b38e-e827-8c88-72e7-7329fca790c2.webPlatform.png",
+      "sizes": "150x150",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/bf38bc52-9262-5390-4418-d0ad4c6bda6a.webPlatform.png",
+      "sizes": "88x88",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/06221281-3637-47ed-98e8-155673e7ecc8.webPlatform.png",
+      "sizes": "24x24",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/45149852-df2f-1f40-f10c-903c350a15fe.webPlatform.png",
+      "sizes": "50x50",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/336ba31d-135a-002b-ce9c-b22ea2ad4ec3.webPlatform.png",
+      "sizes": "620x300",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/93272339-f931-023f-6410-c90678450194.webPlatform.png",
+      "sizes": "192x192",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/d3a0d630-e42e-6925-002f-9ed40d12aaf0.webPlatform.png",
+      "sizes": "144x144",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/eb4fc64c-7ea2-ee5a-f5a2-d29597afb0d8.webPlatform.png",
+      "sizes": "96x96",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/50b1ece9-e1ef-af1d-b3db-71d2966d940d.webPlatform.png",
+      "sizes": "72x72",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/d38d773f-55e4-8bd4-c4f9-6169592bba00.webPlatform.png",
+      "sizes": "36x36",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/bf703809-bcd7-9f5c-0d86-9114b8abdd7b.webPlatform.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/9be282c1-1f4f-84d8-9c59-9c182ac003a2.webPlatform.png",
+      "sizes": "180x180",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/0d48ba80-6980-93e8-878a-53dad093d0e0.webPlatform.png",
+      "sizes": "152x152",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/f9ed49b8-483f-36c3-b819-e8790117b329.webPlatform.png",
+      "sizes": "120x120",
+      "type": "image/png"
+  },
+  {
+      "src": "https://localvid.netlify.com/0e63e99b-8a64-0b4b-aac9-8a65fde9724a.webPlatform.png",
+      "sizes": "76x76",
+      "type": "image/png"
+  }],
 	"start_url" : "https://localvid.netlify.com/",
 	"display" : "fullscreen",
 	"theme_color" : "#000000",
