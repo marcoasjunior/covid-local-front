@@ -43,8 +43,8 @@ export default function Mapa() {
         return (
         <div className='card'>
             <div className="splash-screen">
-                <span id='loading'>Carregando</span>
                 <div className="loading-dot">.</div>
+
             </div>
         </div>
         )
