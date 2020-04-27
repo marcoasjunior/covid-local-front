@@ -25,7 +25,7 @@ export default function Mapa() {
                 alert(`Erro ao enviar dados`)
             })
         
-        await api.get(`https://corona.lmao.ninja/countries/brazil`)
+        await api.get(`https://corona.lmao.ninja/v2/countriescountries/brazil`)
             .then(response => {
 
                 setCasesBrazil(response.data)
