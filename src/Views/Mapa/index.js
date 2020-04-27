@@ -56,22 +56,22 @@ export default function Mapa() {
 
                 <div className="card-body">
                     <h5 className="card-title">Logradouro: {cases.address}</h5>
-                    <p className="card-text">Pessoas com sintomas: {casesN.Naddress}</p>
+                    <p className="card-text">Pessoas com sintomas no app: {casesN.Naddress}</p>
 
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">Bairro: {cases.district}</h5>
-                    <p className="card-text">Pessoas com sintomas: {casesN.Ndistrict}</p>
+                    <p className="card-text">Pessoas com sintomas no app: {casesN.Ndistrict}</p>
 
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">Cidade: {cases.city}</h5>
-                    <p className="card-text">Pessoas com sintomas: {casesN.Ncity}</p>
+                    <p className="card-text">Pessoas com sintomas no app: {casesN.Ncity}</p>
 
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">Estado: {cases.uf}</h5>
-                    <p className="card-text">Pessoas com sintomas: {casesN.Nuf}</p>
+                    <p className="card-text">Pessoas com sintomas no app: {casesN.Nuf}</p>
 
                 </div>
 
